@@ -5,6 +5,6 @@ public record Book( Long Id,
                     String ISBN,
                    String Autor,
                    String Title,
-                   LocalDate age,
-                   BookStatus status) {
+                   LocalDate Age,
+                   BookStatus Status) {
 }

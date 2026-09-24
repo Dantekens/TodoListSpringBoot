@@ -29,7 +29,7 @@ public class BookControler {
            @PathVariable Long id
     ){
         log.info("Запрос на получение книги по ID");
-        return bookService.BookGetByISBN(id);
+        return bookService.BookGetByID(id);
     }
 
     @PostMapping()
@@ -46,5 +46,21 @@ public class BookControler {
     ){
         log.info("Запрос на добавление масива книг");
         bookService.AddListBook(book);
+    }
+
+    @PutMapping()
+    public void updateBook(
+            @RequestBody Book bookByClient
+    ){
+        log.info("Запрос на обновление  книги");
+        bookService.UpdateBookByID(bookByClient);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(
+            @PathVariable Long id
+    ){
+        log.info("Запрос на удаление  по id");
+        bookService.RemoveBoookByID(id);
     }
 }
